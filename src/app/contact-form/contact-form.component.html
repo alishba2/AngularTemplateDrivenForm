@@ -1,0 +1,16 @@
+<form #contactForm="ngForm">
+   JSON OF INPUT:  {{model| json}}
+    <h2 style="text-align: center;">Template Driven Form</h2>
+    <div class="form-group">
+        <label>ID</label>
+        <input type="text" class="form-control" required  [(ngModel)]="model.id" name="id">
+        <label>Name</label>
+        <input type="text" class="form-control" required  [(ngModel)]="model.name" name="name">
+    </div>
+    <div class="form-group">
+        <label for="techs">Techs</label>
+        <select class="form-control" id="techs" required   [(ngModel)]="model.techs" name="techs">
+          <option *ngFor="let pow of techs" [value]="pow">{{pow}}</option>
+        </select>
+      </div>
+</form>
